@@ -10,7 +10,6 @@ setup(
 		py_modules=[
 				'django_commonutil_model',
 		],
-		package_dir={'': ''},
 		classifiers=[
 				'Development Status :: 5 - Production/Stable',
 				'Intended Audience :: Developers',
