@@ -7,7 +7,7 @@ setup(
 		name="django-commonutil-model",
 		version="0.1.1",  # REV-CONSTANT:rev 5d022db7d38f580a850cd995e26a6c2f
 		description="Common utilities for Django Model and Model Fields",
-		py_modules=[
+		packages=[
 				'django_commonutil_model',
 		],
 		classifiers=[
