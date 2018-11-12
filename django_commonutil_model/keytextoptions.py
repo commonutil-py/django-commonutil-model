@@ -68,3 +68,6 @@ class BaseKeyTextOptions(models.Model):
 				self.option_key,
 				self.option_value,
 		)
+
+	class Meta:
+		abstract = True
