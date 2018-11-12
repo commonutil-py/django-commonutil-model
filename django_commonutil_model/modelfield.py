@@ -30,7 +30,7 @@ def _make_default_kwd_modelfield_deconstruct(orig_deconstruct, k, v):
 	return f
 
 
-def attach_default_help_text_for_modelfield(help_text):
+def attach_default_help_text(help_text):
 	"""
 	Decorator to attach default help text for model field
 
