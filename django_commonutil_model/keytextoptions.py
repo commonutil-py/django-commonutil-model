@@ -3,8 +3,6 @@
 Base model of Key-Text option storage
 """
 
-from __future__ import unicode_literals
-
 from json import loads as json_loads
 from json import dumps as json_dumps
 
@@ -59,15 +57,11 @@ class BaseKeyTextOptions(models.Model):
 
 	@classmethod
 	def put_text(cls, option_key, option_value):
-		option_value = option_value if isinstance(option_value, basestring) else str(option_value)
+		option_value = option_value if isinstance(option_value, str) else str(option_value)
 		cls.objects.update_or_create(option_key=option_key, defaults={'option_value': option_value})
 
 	def __unicode__(self):
-		return "%s(option_key=%r, option_value=%r)" % (
-				self.__class__.__name__,
-				self.option_key,
-				self.option_value,
-		)
+		return f"{self.__class__.__name__}(option_key={self.option_key!r}, option_value={self.option_value!r})"
 
 	class Meta:
 		abstract = True

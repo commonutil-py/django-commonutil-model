@@ -3,8 +3,6 @@
 Access content of Django model instances
 """
 
-from __future__ import unicode_literals
-
 from django.db.models.fields.related import RelatedField, ForeignKey
 
 
@@ -22,7 +20,7 @@ def fetch_model_field_contents(model_cls, instance, include_none=False):
 	"""
 	result_value = {}
 	result_relation = {}
-	for f in model_cls._meta.get_fields():
+	for f in model_cls._meta.get_fields():  # pylint: disable=protected-access
 		n = f.name
 		d = getattr(instance, n)
 		if (d is None) and (include_none is False):
@@ -42,7 +40,7 @@ def duplicate_model_relation_contents(instance, relation_contents):
 		instance - Model instance to apply relations
 		relation_contents - Content of relationships
 	"""
-	for name, relations in relation_contents.iteritems():
+	for name, relations in relation_contents.items():
 		rel = getattr(instance, name)
 		if rel is None:
 			continue
